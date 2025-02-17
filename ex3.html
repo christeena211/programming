@@ -1,1 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of Multiples</title>
+    <script>
+        function sumOfMultiples(a, b, n) {
+            let sum = 0;
+            for (let i = 1; i < n; i++) {
+                if (i % a === 0 || i % b === 0) {
+                    sum += i;
+                }
+            }
+            return sum;
+        }
 
+        function doIt() {
+            // Get values from input boxes
+            const a = parseInt(document.getElementById("a").value);
+            const b = parseInt(document.getElementById("b").value);
+            const n = parseInt(document.getElementById("n").value);
+
+            // Validate inputs
+            if (isNaN(a) || isNaN(b) || isNaN(n) || a <= 0 || b <= 0 || n <= 0) {
+                alert("Please enter valid positive numbers.");
+                return;
+            }
+
+            // Call the sumOfMultiples function and alert the result
+            const result = sumOfMultiples(a, b, n);
+            alert("The sum of multiples of " + a + " or " + b + " below " + n + " is: " + result);
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Sum of Multiples Calculator</h2>
+
+    <label for="a">Enter a: </label>
+    <input type="number" id="a" /><br><br>
+
+    <label for="b">Enter b: </label>
+    <input type="number" id="b" /><br><br>
+
+    <label for="n">Enter n: </label>
+    <input type="number" id="n" /><br><br>
+
+    <button onclick="doIt()">Press me!</button>
+
+</body>
+</html>
