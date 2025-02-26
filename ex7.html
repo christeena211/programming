@@ -16,3 +16,35 @@
     <button onclick="calculateCost()">Calculate Total Cost</button>
 
     <h3 id="result"></h3>
+    <script>
+        
+        function f7(basket, prices) {
+            let totalCost = 0;
+            for (let product in basket) {
+                if (prices[product]) {
+                    totalCost += basket[product] * prices[product];
+                }
+            }
+            return totalCost;
+        }
+
+        
+        function calculateCost() {
+            try {
+                
+                let basket = JSON.parse(document.getElementById('basket').value);
+                let prices = JSON.parse(document.getElementById('prices').value);
+
+                
+                let totalCost = f7(basket, prices);
+
+                
+                document.getElementById('result').textContent = "Total cost: &" + totalCost.toFixed(2);
+            } catch (e) {
+                document.getElementById('result').textContent = "Error in input. Please ensure both fields are valid JSON.";
+            }
+        }
+    </script>
+</body>
+</html>
+
