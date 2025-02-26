@@ -15,4 +15,29 @@
     <textarea id="l" name="l" rows="5" cols="50" placeholder="Enter list of numbers separated by commas" required></textarea><br><br>
     
     <button onclick="calculateSum()">Calculate Sum</button>
+    <script>
+        
+        function f6(a, l) {
+            let sum = 0;
+            for (let i = 0; i < l.length; i++) {
+                for (let j = 0; j < a.length; j++) {
+                    if (l[i] % a[j] === 0) {
+                        sum += l[i];
+                        break;  
+                    }
+                }
+            }
+            return sum;
+        }
+        function calculateSum() {
+            
+            let a = document.getElementById('a').value.trim().split(',').map(num => parseInt(num.trim()));
+            let l = document.getElementById('l').value.trim().split(',').map(num => parseInt(num.trim()));
+            let result = f6(a, l);
+            alert("The sum of all multiples of the factors in the list is: " + result);
+        }
+    </script>
+</body>
+</html>
+
 
