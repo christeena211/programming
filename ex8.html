@@ -55,3 +55,28 @@
             "banana": 0.5,
             "orange": 0.8
         };
+        function addItemToBasket() {
+            const product = document.getElementById("product").value.trim();
+            const qty = parseInt(document.getElementById("qty").value.trim());
+
+            if (product && qty > 0) {
+                basket.addItem(product, qty); // Add item to basket
+                alert(`Added ${qty} ${product}(s) to the basket.`);
+            } else {
+                alert("Please enter a valid product and quantity.");
+            }
+
+            
+            document.getElementById("product").value = '';
+            document.getElementById("qty").value = '';
+        }
+
+        
+        function calculateTotal() {
+            const totalCost = basket.getCost(prices); 
+            document.getElementById("result").textContent = `Total cost: $${totalCost.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
+
