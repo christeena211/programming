@@ -9,24 +9,23 @@
 
     <p>Enter your baggage weight:</p>
     
-    <!-- Input field where the user enters baggage weight -->
+    
     <input type="text" id="bw" width="6">
     
-    <!-- Submit button -->
     <button onclick="doIt()">Submit</button>
 
     <script>
-        // Function that runs when the button is clicked
+        
         function doIt() {
-            // Get the value from the input field (baggage weight)
+            
             var weight = document.getElementById("bw").value;
             
-            // Check if the weight is more than 15kg
+            
             if (weight > 15) {
-                // If it's over 15kg, show an alert
+                
                 alert("Your bag is overweight!");
             } else {
-                // If it's not over 15kg, you could show a different message (optional)
+            
                 alert("Your bag is within the weight limit.");
             }
         }
