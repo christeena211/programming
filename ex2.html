@@ -3,33 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multiples of 3 or 5</title>
+    <title>Sum of Multiples</title>
+    <script>
+        function sumMultiples() {
+            let sum = 0;
+            for (let i = 1; i < 1000; i++) {
+                if (i % 3 === 0 || i % 5 === 0) {
+                    sum += i;
+                }
+            }
+            alert("The sum of all multiples of 3 or 5 below 1000 is: " + sum);
+        }
+    </script>
 </head>
 <body>
 
-    <p>Click the button to find the sum of all multiples of 3 or 5 below 1000:</p>
-    
-    
-    <button onclick="doIt()">Press me!</button>
 
-    <script>
-        
-        function doIt() {
-            let sum = 0; 
             
-            
-            for (let i = 0; i < 1000; i++) {
-            
-                if (i % 3 === 0 || i % 5 === 0) {
-                    sum += i; 
-                }
-            }
-
-        
-            <button onclick="sumMultiples()">Press me!</button>
-
-        }
-    </script>
-
-</body>
-</html>
