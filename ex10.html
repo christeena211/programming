@@ -12,3 +12,14 @@ export default function Basket({item})
 
     );
 }
+import Basket from "./Basket";
+export default function App() {
+    const items =["Apple", "Banana", "Orange"];
+
+    return (
+        <div>
+            <h1> My Store </h1>
+            <Basket items= {items} />
+        </div>
+    );
+}
