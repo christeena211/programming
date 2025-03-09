@@ -16,5 +16,13 @@
                     ${basket.map((item, index) => `<li>${item} <button onclick="removeItem(${index})">X</button></li>`).join('')}
             </ul>
         </div>
-                
+        ;
+    }
+
+function removeItem(index) {
+    basket.splice(index, 1);
+    renderBasket();
 }
+
+renderBasket();
+                
