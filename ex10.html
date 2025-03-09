@@ -6,11 +6,15 @@
         basket.push(randomItem);
         renderBasket()
       }
+      function renderBasket() {
+        let basketContainer = document.getElementById("basketContainer");
+        basketContainer.innerHTML =
 
-    return (
-        <div>
-            <h1> My Store </h1>
-            <Basket items= {items} />
+        <div id="basket">
+            <h2>Basket</h1>
+                <ul>
+                    ${basket.map((item, index) => `<li>${item} <button onclick="removeItem(${index})">X</button></li>`).join('')}
+            </ul>
         </div>
-    );
+                
 }
