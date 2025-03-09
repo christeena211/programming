@@ -3,6 +3,12 @@ export default function Basket({item})
     return(
         <div>
             <h2>Shopping Basket</h2>
+            <ul>
+                {item.map((item, index)=>(
+                    <li key={index}>{item}</li>
+                ))}
+            </ul>
+        </div>
 
-    )
+    );
 }
